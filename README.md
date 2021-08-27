@@ -54,13 +54,33 @@ From each sensor, the meassages needed are:
 
 
 
-## Compilation
+## Dependencies
 
-### Supporting libs
+- OpenVINS - https://docs.openvins.com/gs-installing.html
+- ROS Kinetic or Melodic - https://www.ros.org/
+- OpenCV 3 or 4 - https://github.com/opencv/opencv
+- libpointmatcher (our code with custom covariance) - https://github.com/rpng/libpointmatcher
+    - clone into ros workspace
+    - git clone https://github.com/ethz-asl/libnabo
+    - git clone https://github.com/rpng/libpointmatcher
+- Velodyne Drivers - https://github.com/ros-drivers/velodyne
+	- Get here: https://github.com/ros-drivers/velodyne
+	- Or: `sudo apt-get install ros-melodic-velodyne-msgs`
+- To get MKL and TBB can follow this [link](https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo)).
 
-* OpenVINS, v2.10
-* GTSAM, latest version
-* Eigen
+```cmd
+wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
+sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
+rm GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
+sudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list'
+sudo sh -c 'echo deb https://apt.repos.intel.com/tbb all main > /etc/apt/sources.list.d/intel-tbb.list'
+sudo apt-get update
+sudo apt-get install intel-tbb-2020.0-088
+sudo apt-get install intel-mkl-2020.0-088
+```
 
-### Launch file 
+LZ4 error solution:
+https://github.com/ethz-asl/lidar_align/issues/16#issuecomment-504348488
 
+Eigne error can be solved by turning off the march=native. Which reference is [here](https://github.com/borglab/gtsam/issues/75#issuecomment-502809431
+).
