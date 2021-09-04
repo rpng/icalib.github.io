@@ -48,7 +48,7 @@ From each sensor, the meassages needed are:
 
 ## Supporting materials
 
-* For iCalib [workshop paper](pdf/2021_vinsworkshop_iCalib.pdf).
+* For iCalib [workshop paper](http://udel.edu/~ghuang/icra21-vins-workshop/papers/01-Yang_iCalib.pdf).
 * For iCalib [workshop slides](pdf/ICRA_2021_workshop_icalib_slides.pdf).
 * For iCalib [workshop video](video/icalib_vins_workshop_yulin.mp4). 
 
